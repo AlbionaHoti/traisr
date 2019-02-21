@@ -20,10 +20,18 @@
                 version: 'v3.2'
             });
         };
-        FB.Event.subscribe('send_to_messenger', function (e) {
-            // callback for events triggered by the plugin
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    
+    FB.Event.subscribe('send_to_messenger', function (e) {
+    // callback for events triggered by the plugin
 
-        });
+    });
 
     </script>
     <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
@@ -47,16 +55,10 @@
                 data-ref="state_custom" color="<blue | white>" size="<standard | large | xlarge>">
             </div>
 
-            <div class="fb-messenger-checkbox"  
-            origin=https://albionahoti.github.io/traisr/
-            page_id=728471234186868
-            messenger_app_id=293248461077436
-            user_ref="user tracktrace"
-            allow_login="<true>"
-            size="<small | medium | large | standard | xlarge>"
-            skin="<light|dark>"
-            center_align="<true|false>">
-          </div>
+            <div class="fb-messenger-checkbox" origin=https://albionahoti.github.io/traisr/ page_id=728471234186868
+                messenger_app_id=293248461077436 user_ref="user tracktrace" allow_login="<true>"
+                size="<small | medium | large | standard | xlarge>" skin="<light|dark>" center_align="<true|false>">
+            </div>
         </div>
     </section>
 </body>
